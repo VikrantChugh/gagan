@@ -131,4 +131,4 @@ jobs:
         run: terraform init
       - name: Terraformer Import
         run: |
-          terraformer import aws --path-pattern="{output}/" --compact=true --regions=${{ github.event.inputs.region }} --resources=${{ github.event.inputs.resource }} --filter="Name=id;Value=${{ github.event.inputs.value_of_resource }}" --profile ""
+          terraformer import aws --resources=ec2_instance --filter="Name=id;Value=i-06049885c9234a53c" --regions=us-east-1 
